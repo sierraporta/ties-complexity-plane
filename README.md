@@ -36,6 +36,8 @@ Python 3.10+ with the packages in `requirements.txt` (`pip install -r requiremen
 | `gop_R5_null.py`        | a tie-matched permutation null: its size and power vs the naive white-noise null |
 | `gop_R6_rr.py`          | the ideas applied to a real RR-interval record (record 14134) |
 | `derisk_gop.py`         | first sanity check: the overlap-bias machinery ports to the 75-symbol tie alphabet |
+| `verify_derivations.py` | checks the two-term discretization laws (D and H) against the exact tie-alphabet coordinates (m=3,4,5) |
+| `check_estimator.py`    | Monte-Carlo check of the quantization-corrected disequilibrium estimator D̂₀ = D̂_gap + ĉ/(m−2)! (self-contained) |
 
 Shared helpers: `fsb_extensions.py`, `apply_diagnostics.py` (ordinal-estimator routines).
 Cached console outputs are in `results_*.txt`, figures in `figure_*.pdf` / `figure_*.png`,

@@ -17,6 +17,9 @@ a(4)=75. H is normalized by log a(m).
 import numpy as np
 from itertools import combinations
 from math import log
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
 
 M_GOP = {2: 3, 3: 13, 4: 75, 5: 541}   # ordered Bell (Fubini) numbers
 
@@ -100,7 +103,7 @@ if __name__ == "__main__":
     print(f"  distinct-pairs U = {Du.mean():+.6e}  bias {Du.mean()-D_true:+.3e} (se {se(Du):.1e})")
     print(f"  gap (w={w})       = {Dg.mean():+.6e}  bias {Dg.mean()-D_true:+.3e} (se {se(Dg):.1e})")
 
-    np.save("/home/claude/gop/sweep.npy", np.array(sweep))
-    np.save("/home/claude/gop/bias.npy",
+    np.save(HERE / "sweep.npy", np.array(sweep))
+    np.save(HERE / "bias.npy",
             np.array([D_true, Dp.mean(), Du.mean(), Dg.mean(), se(Dp), se(Du), se(Dg)]))
     print("\nsaved sweep.npy, bias.npy")
